@@ -1,0 +1,17 @@
+0:0:0:0:0:0:0:1 - - [23/Feb/2018:15:32:27 -0300] "GET /intro-spring-mvc-jpa/ HTTP/1.1" 302 - http-bio-9090-exec-1 141
+0:0:0:0:0:0:0:1 - - [23/Feb/2018:15:32:27 -0300] "GET /intro-spring-mvc-jpa/usuario/todos HTTP/1.1" 200 5521 http-bio-9090-exec-3 158
+0:0:0:0:0:0:0:1 - - [23/Feb/2018:15:32:27 -0300] "GET /favicon.ico HTTP/1.1" 404 - http-bio-9090-exec-4 0
+0:0:0:0:0:0:0:1 - - [23/Feb/2018:16:10:28 -0300] "GET /intro-spring-mvc-jpa/ HTTP/1.1" 302 - http-bio-9090-exec-1 120
+0:0:0:0:0:0:0:1 - - [23/Feb/2018:16:10:29 -0300] "GET /intro-spring-mvc-jpa/usuario/todos HTTP/1.1" 200 1016 http-bio-9090-exec-5 585
+0:0:0:0:0:0:0:1 - - [23/Feb/2018:16:10:35 -0300] "GET /intro-spring-mvc-jpa/usuario/cadastro HTTP/1.1" 200 1858 http-bio-9090-exec-6 1656
+0:0:0:0:0:0:0:1 - - [23/Feb/2018:16:11:02 -0300] "POST /intro-spring-mvc-jpa/usuario/save HTTP/1.1" 302 - http-bio-9090-exec-7 288
+0:0:0:0:0:0:0:1 - - [23/Feb/2018:16:11:02 -0300] "GET /intro-spring-mvc-jpa/usuario/todos HTTP/1.1" 200 1667 http-bio-9090-exec-8 39
+0:0:0:0:0:0:0:1 - - [23/Feb/2018:16:11:15 -0300] "GET /intro-spring-mvc-jpa/usuario/update/1 HTTP/1.1" 200 1919 http-bio-9090-exec-9 83
+0:0:0:0:0:0:0:1 - - [23/Feb/2018:16:11:22 -0300] "POST /intro-spring-mvc-jpa/usuario/update HTTP/1.1" 302 - http-bio-9090-exec-10 24
+0:0:0:0:0:0:0:1 - - [23/Feb/2018:16:11:22 -0300] "GET /intro-spring-mvc-jpa/usuario/todos HTTP/1.1" 200 1670 http-bio-9090-exec-10 13
+0:0:0:0:0:0:0:1 - - [23/Feb/2018:16:12:19 -0300] "GET /intro-spring-mvc-jpa/usuario/cadastro HTTP/1.1" 200 1858 http-bio-9090-exec-10 10
+0:0:0:0:0:0:0:1 - - [23/Feb/2018:16:12:44 -0300] "POST /intro-spring-mvc-jpa/usuario/save HTTP/1.1" 302 - http-bio-9090-exec-10 166
+0:0:0:0:0:0:0:1 - - [23/Feb/2018:16:12:44 -0300] "GET /intro-spring-mvc-jpa/usuario/todos HTTP/1.1" 200 2291 http-bio-9090-exec-10 12
+0:0:0:0:0:0:0:1 - - [23/Feb/2018:16:12:51 -0300] "GET /intro-spring-mvc-jpa/usuario/cadastro HTTP/1.1" 200 1858 http-bio-9090-exec-10 8
+0:0:0:0:0:0:0:1 - - [23/Feb/2018:16:13:09 -0300] "POST /intro-spring-mvc-jpa/usuario/save HTTP/1.1" 302 - http-bio-9090-exec-10 90
+0:0:0:0:0:0:0:1 - - [23/Feb/2018:16:13:09 -0300] "GET /intro-spring-mvc-jpa/usuario/todos HTTP/1.1" 200 2918 http-bio-9090-exec-10 13

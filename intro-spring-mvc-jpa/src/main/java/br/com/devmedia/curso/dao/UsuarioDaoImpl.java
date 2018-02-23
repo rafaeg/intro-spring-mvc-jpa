@@ -1,69 +1,74 @@
 package br.com.devmedia.curso.dao;
 
-import java.time.LocalDate;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.stream.Collectors;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import br.com.devmedia.curso.domain.TipoSexo;
 import br.com.devmedia.curso.domain.Usuario;
 
 @Repository
+@Transactional
 public class UsuarioDaoImpl implements UsuarioDao {
-
-	private static List<Usuario> us;
 	
-	public UsuarioDaoImpl() {
-		createUserList();
-	}
+	@PersistenceContext
+	EntityManager manager = null;
 	
-    private List<Usuario> createUserList() {
-        if (us == null) {
-            us = new LinkedList<>();
-            us.add(new Usuario(System.currentTimeMillis()+1L, "Ana", "da Silva", LocalDate.of(1992, 5, 10), TipoSexo.FEMININO));
-            us.add(new Usuario(System.currentTimeMillis()+2L, "Luiz", "dos Santos", LocalDate.of(1990, 8, 11), TipoSexo.MASCULINO));
-            us.add(new Usuario(System.currentTimeMillis()+3L, "Mariana", "Mello", LocalDate.of(1988, 9, 17), TipoSexo.FEMININO));
-            us.add(new Usuario(System.currentTimeMillis()+4L, "Caren", "Pereira"));
-            us.add(new Usuario(System.currentTimeMillis()+5L, "Sonia", "Fagundes"));
-            us.add(new Usuario(System.currentTimeMillis()+6L, "Norberto", "de Souza"));  
-        }
-        return us;
+	@Override
+    public void salvar(Usuario usuario) {
+        manager.persist(usuario); 
     }
-
-	@Override
-	public void salvar(Usuario usuario) {
-		usuario.setId(System.currentTimeMillis());
-		us.add(usuario);
-	}
-
-	@Override
-	public void editar(Usuario usuario) {
-		us.stream()
-			.filter((u) -> u.getId().equals(usuario.getId()))
-			.forEach((u) -> {
-				u.setNome(usuario.getNome());
-				u.setSobrenome(usuario.getSobrenome());
-				u.setDtNascimento(usuario.getDtNascimento());
-				u.setSexo(usuario.getSexo());
-			});		
-	}
-
-	@Override
-	public void excluir(Long id) {
-		us.removeIf((u) -> u.getId().equals(id));		
-	}
-
-	@Override
-	public Usuario getId(Long id) {
-		return us.stream()
-				.filter((u) -> u.getId().equals(id))
-				.collect(Collectors.toList()).get(0);
-	}
-
-	@Override
-	public List<Usuario> getTodos() {
-		return us;
-	}	
+ 
+    @Override
+    public void editar(Usuario usuario) {
+        manager.merge(usuario);       
+    }
+ 
+    @Override
+    public void excluir(Long id) {
+        manager.remove(manager.getReference(Usuario.class, id));        
+    }
+ 
+    @Transactional(readOnly = true)
+    @Override
+    public Usuario getId(Long id) {
+        String jpql = "from Usuario u where u.id = :id";
+        TypedQuery<Usuario> query = manager.createQuery(jpql, Usuario.class);
+        query.setParameter("id", id);
+        return query.getSingleResult();
+    }
+ 
+    @Transactional(readOnly = true)
+    @Override
+    public List<Usuario> getTodos() {
+        String jpql = "from Usuario u";
+        TypedQuery<Usuario> query = manager.createQuery(jpql, Usuario.class);
+        return query.getResultList();
+    }
+ 
+    @Transactional(readOnly = true)
+    @Override
+    public List<Usuario> getBySexo(TipoSexo sexo) {
+        String jpql = "from Usuario u where u.sexo = :sexo";
+        TypedQuery<Usuario> query = manager.createQuery(jpql, Usuario.class);
+        query.setParameter("sexo", sexo);
+        return query.getResultList();
+    }
+ 
+    @Transactional(readOnly = true)
+    @Override
+    public List<Usuario> getByNome(String nome) {
+        String jpql = "from Usuario u where u.nome like :nome or u.sobrenome like :sobrenome";
+        TypedQuery<Usuario> query = manager.createQuery(jpql, Usuario.class);
+        query.setParameter("nome", "%"+nome+"%");
+        query.setParameter("sobrenome", "%"+nome+"%");
+        return query.getResultList();
+    }
+	
+	
 }
