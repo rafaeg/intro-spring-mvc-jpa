@@ -6,12 +6,16 @@ import javax.persistence.*;
 import javax.sql.DataSource;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaDialect;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+@EnableTransactionManagement
+@Configuration
 public class SpringJPAConfig {
 	 
 	 // A anotação @Bean transforma o método dataSource em um Bean gerenciado pelo Spring. Sendo obrigatório, pois sem ele o spring não vai conseguir gerenciar a conexão
