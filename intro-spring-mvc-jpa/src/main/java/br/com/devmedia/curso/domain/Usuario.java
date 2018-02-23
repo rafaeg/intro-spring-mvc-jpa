@@ -40,6 +40,15 @@ public class Usuario implements Serializable{
 	@Enumerated(EnumType.STRING)
 	private TipoSexo sexo;
 	
+	@Column( name = "email", nullable = false, length = 50)
+	@NotNull(message = "O campo 'email' é requerido.")
+	private String email;
+	
+	@Column( name = "senha", nullable = false, length = 10)
+	@NotNull(message = "O campo 'senha' é requerido.")
+	private String senha;
+	
+	
 	public Usuario() {
 		super();
 	}	
@@ -107,10 +116,29 @@ public class Usuario implements Serializable{
 	public void setSexo(TipoSexo sexo) {
 		this.sexo = sexo;
 	}
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+	
 
 	@Override
 	public String toString() {
-		return "Usuario [id=" + id + ", nome=" + nome + ", sobrenome=" + sobrenome + "]";
+		return "Usuario [id=" + id + ", nome=" + nome + ", sobrenome=" + sobrenome + ", dtNascimento=" + dtNascimento
+				+ ", sexo=" + sexo + ", email=" + email + ", senha=" + senha + "]";
 	}
 
 	@Override

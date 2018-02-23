@@ -69,6 +69,16 @@ public class UsuarioDaoImpl implements UsuarioDao {
         query.setParameter("sobrenome", "%"+nome+"%");
         return query.getResultList();
     }
+
+	@Override
+	@Transactional(readOnly = true)
+	public Usuario getByEmailAndSenha(String email, String senha) {
+		String jpql = "from Usuario u WHERE u.email = :email and u.senha = :senha";
+		TypedQuery<Usuario> query = manager.createQuery(jpql, Usuario.class);
+		query.setParameter("email", email);
+		query.setParameter("senha", senha);
+		return query.getSingleResult();
+	}
 	
 	
 }

@@ -39,6 +39,7 @@
             <tr>
                 <th>ID</th>
                 <th>NOME</th>
+                <th>EMAIL</th>
                 <th>DATA NASCIMENTO</th>
                 <th>TIPO SEXO</th>
                 <th>AÇÃO</th>
@@ -49,6 +50,7 @@
                 <tr>
                     <td>${usuario.id }</td>
                     <td>${usuario.nome }&nbsp;${usuario.sobrenome }</td>
+                    <td>${usuario.email }</td>
                     <td>
                     	<f:parseDate var="date" value="${usuario.dtNascimento }" pattern="yyyy-MM-dd" type="date"/>
                     	<f:formatDate value="${date }" pattern="dd/MM/yyyy" type="date"/>

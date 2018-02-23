@@ -40,6 +40,16 @@
                 <form:input path="sobrenome"  class="form-control"/>    
                 <form:errors path="sobrenome" cssClass="label label-danger"/>          
             </div>
+             <div class="form-group">
+                <label for="senha">Email: </label>
+                <form:input path="email"  class="form-control"/>    
+                <form:errors path="email" cssClass="label label-danger"/>          
+            </div>
+             <div class="form-group">
+                <label for="senha">Senha: </label>
+                <form:input type = "password" path="senha"  class="form-control"/>    
+                <form:errors path="senha" cssClass="label label-danger"/>          
+            </div>
             <div class="form-group">
                 <label for="sexo">Sexo: </label>
                 <form:select path="sexo" class="form-control">

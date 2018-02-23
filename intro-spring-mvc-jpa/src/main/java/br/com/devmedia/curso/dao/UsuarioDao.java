@@ -20,4 +20,6 @@ public interface UsuarioDao {
 	List<Usuario> getBySexo(TipoSexo sexo);
 	
 	List<Usuario> getByNome(String nome);
+	
+	Usuario getByEmailAndSenha(String email, String senha);
 }
