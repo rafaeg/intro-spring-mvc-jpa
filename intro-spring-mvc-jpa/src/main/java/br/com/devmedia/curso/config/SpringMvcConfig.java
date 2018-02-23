@@ -20,7 +20,7 @@ public class SpringMvcConfig extends WebMvcConfigurerAdapter {
 		resolver.setViewClass(JstlView.class);
 		return resolver;
 	}
-
+	
 	@Override
 	public void addFormatters(FormatterRegistry registry) {
 		registry.addConverter(new TipoSexoConverter());
