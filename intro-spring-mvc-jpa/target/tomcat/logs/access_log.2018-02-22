@@ -6,3 +6,9 @@
 0:0:0:0:0:0:0:1 - - [22/Feb/2018:18:26:57 -0300] "GET /intro-spring-mvc HTTP/1.1" 302 - http-bio-9090-exec-6 0
 0:0:0:0:0:0:0:1 - - [22/Feb/2018:18:26:57 -0300] "GET /intro-spring-mvc/ HTTP/1.1" 302 - http-bio-9090-exec-7 69
 0:0:0:0:0:0:0:1 - - [22/Feb/2018:18:27:00 -0300] "GET /intro-spring-mvc/usuario/todos HTTP/1.1" 200 5469 http-bio-9090-exec-8 2572
+0:0:0:0:0:0:0:1 - - [22/Feb/2018:18:34:33 -0300] "GET /intro-spring-mvc-jpa/ HTTP/1.1" 404 - http-bio-9090-exec-2 0
+0:0:0:0:0:0:0:1 - - [22/Feb/2018:18:34:41 -0300] "GET /intro-spring-mvc-jpa/usuarios/todos HTTP/1.1" 404 - http-bio-9090-exec-3 0
+0:0:0:0:0:0:0:1 - - [22/Feb/2018:21:53:13 -0300] "GET /intro-spring-mvc-jpa HTTP/1.1" 302 - http-bio-9090-exec-1 0
+0:0:0:0:0:0:0:1 - - [22/Feb/2018:21:53:13 -0300] "GET /intro-spring-mvc-jpa/ HTTP/1.1" 302 - http-bio-9090-exec-2 62
+0:0:0:0:0:0:0:1 - - [22/Feb/2018:21:53:15 -0300] "GET /intro-spring-mvc-jpa/usuario/todos HTTP/1.1" 200 5521 http-bio-9090-exec-3 1556
+0:0:0:0:0:0:0:1 - - [22/Feb/2018:21:53:15 -0300] "GET /favicon.ico HTTP/1.1" 404 - http-bio-9090-exec-4 0

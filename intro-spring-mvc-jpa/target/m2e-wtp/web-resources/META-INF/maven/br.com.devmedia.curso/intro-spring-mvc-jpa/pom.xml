@@ -58,7 +58,7 @@
 				<version>2.2</version>
 				<configuration>
 					<port>9090</port>
-					<path>/${project.build.finalName}</path>
+					<path>/intro-spring-mvc-jpa</path>
 				</configuration>
 			</plugin>
 		</plugins>
