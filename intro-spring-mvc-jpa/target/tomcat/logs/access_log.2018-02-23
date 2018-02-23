@@ -83,3 +83,13 @@
 0:0:0:0:0:0:0:1 - - [23/Feb/2018:18:02:46 -0300] "GET /intro-spring-mvc-jpa/usuario/todos HTTP/1.1" 200 3229 http-bio-9090-exec-1 2337
 0:0:0:0:0:0:0:1 - - [23/Feb/2018:18:02:46 -0300] "GET /intro-spring-mvc-jpa/static/css/bootstrap.min.css HTTP/1.1" 200 121200 http-bio-9090-exec-2 40
 0:0:0:0:0:0:0:1 - - [23/Feb/2018:18:02:47 -0300] "GET /intro-spring-mvc-jpa/static/css/bootstrap.min.css.map HTTP/1.1" 200 542194 http-bio-9090-exec-3 241
+0:0:0:0:0:0:0:1 - - [23/Feb/2018:18:09:12 -0300] "GET /intro-spring-mvc-jpa/usuario/todos HTTP/1.1" 200 3229 http-bio-9090-exec-1 654
+0:0:0:0:0:0:0:1 - - [23/Feb/2018:18:09:12 -0300] "GET /intro-spring-mvc-jpa/static/css/bootstrap.css HTTP/1.1" 304 - http-bio-9090-exec-2 83
+0:0:0:0:0:0:0:1 - - [23/Feb/2018:18:09:12 -0300] "GET /intro-spring-mvc-jpa/static/css/bootstrap.css.map HTTP/1.1" 304 - http-bio-9090-exec-3 5
+0:0:0:0:0:0:0:1 - - [23/Feb/2018:18:09:18 -0300] "GET /intro-spring-mvc-jpa/usuario/update/1 HTTP/1.1" 200 1919 http-bio-9090-exec-4 107
+0:0:0:0:0:0:0:1 - - [23/Feb/2018:18:09:25 -0300] "POST /intro-spring-mvc-jpa/usuario/update HTTP/1.1" 302 - http-bio-9090-exec-5 120
+0:0:0:0:0:0:0:1 - - [23/Feb/2018:18:09:25 -0300] "GET /intro-spring-mvc-jpa/usuario/todos HTTP/1.1" 200 3253 http-bio-9090-exec-6 15
+0:0:0:0:0:0:0:1 - - [23/Feb/2018:18:10:19 -0300] "GET /intro-spring-mvc-jpa/usuario/cadastro HTTP/1.1" 200 1858 http-bio-9090-exec-7 12
+0:0:0:0:0:0:0:1 - - [23/Feb/2018:18:10:56 -0300] "POST /intro-spring-mvc-jpa/usuario/save HTTP/1.1" 302 - http-bio-9090-exec-8 198
+0:0:0:0:0:0:0:1 - - [23/Feb/2018:18:10:56 -0300] "GET /intro-spring-mvc-jpa/usuario/todos HTTP/1.1" 200 3888 http-bio-9090-exec-9 14
+0:0:0:0:0:0:0:1 - - [23/Feb/2018:18:10:56 -0300] "GET /intro-spring-mvc-jpa/static/js/bootstrap.js HTTP/1.1" 304 - http-bio-9090-exec-10 8
