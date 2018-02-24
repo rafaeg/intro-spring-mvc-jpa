@@ -17,6 +17,11 @@ public class WelcomeController {
 		return "/login";
 	}
 	
+	@RequestMapping( value = "/home", method = RequestMethod.GET)
+	public String home() {
+		return "/home/home";
+	}	
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String welcome() {
 		//return "welcome";
