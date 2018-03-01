@@ -2,6 +2,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,11 +27,23 @@
 
 		<spring:url value="/usuario/cadastro" var="cadastro"/>
         <a class="btn btn-default" href="${cadastro }">Novo Usuário</a>
+        
+        <div align="right">
+			<spring:url value="/usuario/nome" var="action_name" />
+			<form action="${action_name }" method="post" class="form-inline">
+			  <div class="form-group">
+			    <label for="nome">Nome</label>
+			    	<input type="text" name="nome" id="nome" class="form-control" />
+			  </div>
+			  <button type="submit" class="btn btn-default">Buscar</button>
+			</form>
+		</div>
+       
     </div>
     <hr>
 
     <div class="panel-default">
-
+						
         <div class="panel-heading">
             <span>${message == null ? '&nbsp;' : message}</span>
         </div>

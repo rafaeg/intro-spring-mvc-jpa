@@ -1,9 +1,12 @@
 package br.com.devmedia.curso.web.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -71,6 +75,16 @@ public class UsuarioController {
 		attr.addFlashAttribute("message", "Usuário excluído com sucesso.");
 		return "redirect:/usuario/todos";
 	}
+	
+	@PostMapping("/nome")
+	public ModelAndView listarPorNome(@RequestParam("nome") String prmNome, RedirectAttributes attr ) {
+		if(prmNome == null) {
+			attr.addFlashAttribute("message", "Informe o nome para pesquisa");
+			return new ModelAndView("redirect:/user/list");
+		}
+		return new ModelAndView("/user/list", "usuarios", dao.getByNome(prmNome));
+	}
+	
 	
 	
 }
